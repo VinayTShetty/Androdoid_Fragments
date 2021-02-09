@@ -1,0 +1,7 @@
+Framents Theorey
+----------------
+
+
+Fragments can be added in 2 ways.
+1)Statically:- Adding a Fragment using XML file statically.
+2)Dynamically:-Using Code at Run time.
