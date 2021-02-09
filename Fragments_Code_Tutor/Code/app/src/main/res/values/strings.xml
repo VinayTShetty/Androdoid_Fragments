@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">Fragments</string>
 
+
+    <!--Main Activity-->
+    <string name="main_Activity">MainActivity</string>
+    <!--Fragments-->
+    <!--Fragment one-->
     <string name="fragment_one">Fragment One</string>
+
 </resources>
