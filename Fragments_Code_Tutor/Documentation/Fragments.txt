@@ -5,3 +5,11 @@ Framents Theorey
 Fragments can be added in 2 ways.
 1)Statically:- Adding a Fragment using XML file statically.
 2)Dynamically:-Using Code at Run time.
+
+
+
+1)Frame Layout is Recomended for hosting a fragment.As it will block a particular area on the screen.
+2)Add,Remove,Replace all these are called as Fragment Transaction.
+3)Steps to do Fragment Transaction.
+    a)Use method from Activity to get FragmentManager.
+    b)Using FragmentManager get hold of the FragmentTransaction. 

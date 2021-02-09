@@ -2,9 +2,8 @@ Video Link:-https://www.youtube.com/watch?v=NCaomVCURDM&list=PLfuE3hOAeWhZDH-wHD
 
 Video Session Completed.
 ------------------------
-
-
-
- Date            Videos Completed
-09/02/21            YES
-10/02/21            YES
+   Video Number                      Date            Videos Completed
+     Video 1                        09/02/21            YES
+     Video 2                        09/02/21            YES
+     Video 3                        10/02/21            YES
+                                    
