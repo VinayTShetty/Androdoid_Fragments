@@ -26,13 +26,26 @@
         android:id="@+id/mainActivity_container"
         android:layout_width="match_parent"
         android:layout_height="500dp"
-        android:background="@color/white"></FrameLayout>
+        android:background="@color/white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/main_Activity_container"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            >
+        </TextView>
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
         <Button
+            android:id="@+id/mainActivtiy_AddButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="25dp"

@@ -4,6 +4,7 @@
 
     <!--Main Activity-->
     <string name="main_Activity">MainActivity</string>
+    <string name="main_Activity_container">Main Activity Container</string>
     <!--Fragments-->
     <!--Fragment one-->
     <string name="fragment_one">Fragment One</string>
