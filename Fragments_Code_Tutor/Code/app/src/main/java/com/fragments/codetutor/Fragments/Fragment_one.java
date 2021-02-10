@@ -2,6 +2,7 @@ package com.fragments.codetutor.Fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,9 +14,12 @@ import com.fragments.codetutor.BaserFragment.BaseFragment;
 import com.fragments.codetutor.R;
 
 public class Fragment_one extends BaseFragment {
+    public static final String TAG=Fragment_one.class.getName();
+    public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        Log.d(TAG, "onAttach: ");
     }
 
     @Override
