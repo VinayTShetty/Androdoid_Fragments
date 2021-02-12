@@ -14,8 +14,9 @@ import com.fragments.codetutor.Fragments.Fragment_one;
 public class MainActivity extends AppCompatActivity {
     Button button_AddFragmet;
     TextView textView_container_text;
-    public static final String TAG=MainActivity.class.getName();
+    public static final String ACTIVITY_NAME=MainActivity.class.getName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
+    public static final String TAG=ACTIVITY_NAME;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,31 +29,31 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart: ");
+        Log.d(TAG, ACTIVITY_NAME+" onStart: ");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d(TAG, "onResume: ");
+        Log.d(TAG, ACTIVITY_NAME+" onResume: ");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d(TAG, "onPause: ");
+        Log.d(TAG, ACTIVITY_NAME+" onPause: ");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop: ");
+        Log.d(TAG, ACTIVITY_NAME+"  onStop: ");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(TAG, "onDestroy: ");
+        Log.d(TAG, ACTIVITY_NAME+"  onDestroy: ");
     }
 
     
