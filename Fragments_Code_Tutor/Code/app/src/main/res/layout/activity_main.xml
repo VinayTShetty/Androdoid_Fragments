@@ -44,14 +44,37 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:weightSum="1">
         <Button
             android:id="@+id/mainActivtiy_AddButton"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="25dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
             android:textAllCaps="false"
-            android:text="Add Fragment">
+            android:layout_margin="10dp"
+            android:text="Add "
+            android:layout_weight="0.33">
+        </Button>
+        <Button
+            android:id="@+id/mainActivtiy_remove"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:layout_margin="10dp"
+            android:textAllCaps="false"
+            android:text="Remove"
+            android:layout_weight="0.33">
+        </Button>
+        <Button
+            android:id="@+id/mainActivtiy_replace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="15dp"
+            android:layout_margin="10dp"
+            android:textAllCaps="false"
+            android:text="Replace"
+            android:layout_weight="0.33">
         </Button>
     </LinearLayout>
 </LinearLayout>
