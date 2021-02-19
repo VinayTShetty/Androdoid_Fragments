@@ -91,15 +91,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-   /* private void addFragment(){
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        Fragment_one fragment_one=new Fragment_one();
-        fragmentTransaction.add(R.id.mainActivity_container,fragment_one,fragment_one.toString());
-        fragmentTransaction.addToBackStack(fragment_one.toString());
-        fragmentTransaction.commit();
-    }*/
-
     private void addFragment(){
         Fragment fragment;
         switch (fragmentManager.getBackStackEntryCount()){
