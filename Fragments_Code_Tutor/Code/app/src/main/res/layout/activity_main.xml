@@ -32,11 +32,12 @@
             android:id="@+id/container_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="@string/main_Activity_container"
             android:textSize="25dp"
-            android:textColor="@color/black"
+            android:textColor="@color/color_dim"
             android:textStyle="bold"
-            android:layout_gravity="center"
+            android:layout_gravity="center_horizontal"
             >
         </TextView>
     </FrameLayout>

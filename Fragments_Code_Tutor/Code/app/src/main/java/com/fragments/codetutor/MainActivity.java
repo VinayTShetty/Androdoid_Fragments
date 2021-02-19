@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
         button_AddFragmet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textView_container_text.setVisibility(View.INVISIBLE);
+               // textView_container_text.setVisibility(View.INVISIBLE);
                 addFragment();
             }
         });
@@ -78,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         Fragment_one fragment_one=new Fragment_one();
         fragmentTransaction.add(R.id.mainActivity_container,fragment_one);
+        fragmentTransaction.addToBackStack(fragment_one.toString());
         fragmentTransaction.commit();
     }
 }

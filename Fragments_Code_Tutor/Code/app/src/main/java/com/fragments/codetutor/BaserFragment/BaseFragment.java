@@ -63,4 +63,8 @@ public class BaseFragment extends Fragment {
         super.onDetach();
     }
 
+    @Override
+    public String toString() {
+        return BaseFragment.class.getSimpleName();
+    }
 }

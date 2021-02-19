@@ -77,4 +77,9 @@ public class Fragment_one extends BaseFragment {
         super.onDetach();
         Log.d(TAG, FRAGMENT_NAME+" onDetach: ");
     }
+
+    @Override
+    public String toString() {
+        return Fragment_one.class.getName();
+    }
 }
