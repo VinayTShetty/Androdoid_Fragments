@@ -14,14 +14,14 @@ import com.fragments.codetutor.Fragments.Fragment_one;
 public class MainActivity extends AppCompatActivity {
     Button button_AddFragmet;
     TextView textView_container_text;
-    public static final String ACTIVITY_NAME=MainActivity.class.getName();
+    public static final String ACTIVITY_NAME=MainActivity.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
-    public static final String TAG=ACTIVITY_NAME;
+    public static final String TAG=COMBINED_TAG;//ACTIVITY_NAME;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.d(TAG, "onCreate: ");
+        Log.d(TAG, ACTIVITY_NAME+" onCreate: ");
         intializeView();
         onClickSetListner();
     }

@@ -14,9 +14,9 @@ import com.fragments.codetutor.BaserFragment.BaseFragment;
 import com.fragments.codetutor.R;
 
 public class Fragment_one extends BaseFragment {
-    public static final String FRAGMENT_NAME=Fragment_one.class.getName();
+    public static final String FRAGMENT_NAME=Fragment_one.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
-    public static final String TAG=FRAGMENT_NAME;
+    public static final String TAG=COMBINED_TAG;//FRAGMENT_NAME;
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
