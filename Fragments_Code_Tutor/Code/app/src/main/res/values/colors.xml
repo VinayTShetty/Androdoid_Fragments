@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="color_dim">#EFE9E9</color>
+    <color name="red">#EC0909</color>
 
     <color name="activity_color">#81078DF1</color>
     <color name="fragment_1_color">#81E40DC1</color>

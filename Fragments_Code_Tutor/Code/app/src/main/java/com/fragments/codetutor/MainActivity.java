@@ -13,7 +13,7 @@ import com.fragments.codetutor.Fragments.Fragment_one;
 
 public class MainActivity extends AppCompatActivity {
     Button button_AddFragmet;
-    TextView textView_container_text;
+    TextView textView_container_text,textView_backStactEntryCount;
     public static final String ACTIVITY_NAME=MainActivity.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
     public static final String TAG=COMBINED_TAG;//ACTIVITY_NAME;
@@ -59,8 +59,15 @@ public class MainActivity extends AppCompatActivity {
     
 
     private void intializeView(){
+        /**
+         * Buttons
+         */
         button_AddFragmet=(Button)findViewById(R.id.mainActivtiy_AddButton);
+        /**
+         * TextViews
+         */
         textView_container_text=(TextView) findViewById(R.id.container_text);
+        textView_backStactEntryCount=(TextView) findViewById(R.id.backStactEntryCount_textview);
     }
 
     private void onClickSetListner(){
@@ -77,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         Fragment_one fragment_one=new Fragment_one();
-        fragmentTransaction.add(R.id.mainActivity_container,fragment_one);
+        fragmentTransaction.add(R.id.mainActivity_container,fragment_one,fragment_one.toString());
         fragmentTransaction.addToBackStack(fragment_one.toString());
         fragmentTransaction.commit();
     }
