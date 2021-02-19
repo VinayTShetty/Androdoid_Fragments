@@ -12,7 +12,7 @@ import androidx.annotation.Nullable;
 import com.fragments.codetutor.BaserFragment.BaseFragment;
 import com.fragments.codetutor.R;
 
-public class Fragment_Three extends BaseFragment {
+public class SampleFragment extends BaseFragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -26,7 +26,7 @@ public class Fragment_Three extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_three,container,false);
+        return inflater.inflate(R.layout.fragment_one,container,false);
     }
 
     @Override
@@ -66,6 +66,6 @@ public class Fragment_Three extends BaseFragment {
 
     @Override
     public String toString() {
-        return Fragment_two.class.getName().toString();
+        return SampleFragment.class.getName().toString();
     }
 }

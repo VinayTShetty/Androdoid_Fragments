@@ -12,4 +12,7 @@
 
     <color name="activity_color">#81078DF1</color>
     <color name="fragment_1_color">#81E40DC1</color>
+    <color name="fragment_2_color">#814DE40D</color>
+    <color name="fragment_3_color">#81010B4A</color>
+    <color name="Sample_fragment">#81EDAD0A</color>
 </resources>

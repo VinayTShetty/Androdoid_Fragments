@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.fragments.codetutor.BaserFragment.BaseFragment;
+import com.fragments.codetutor.R;
 
 public class Fragment_two extends BaseFragment {
     @Override
@@ -25,7 +26,7 @@ public class Fragment_two extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return inflater.inflate(R.layout.fragment_two,container,false);
     }
 
     @Override

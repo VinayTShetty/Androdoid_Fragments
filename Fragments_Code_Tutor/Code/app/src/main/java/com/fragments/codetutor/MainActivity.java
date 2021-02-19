@@ -1,5 +1,6 @@
 package com.fragments.codetutor;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -9,7 +10,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.fragments.codetutor.Fragments.Fragment_Three;
 import com.fragments.codetutor.Fragments.Fragment_one;
+import com.fragments.codetutor.Fragments.Fragment_two;
+import com.fragments.codetutor.Fragments.SampleFragment;
 
 public class MainActivity extends AppCompatActivity {
     Button button_AddFragmet;
@@ -17,6 +21,10 @@ public class MainActivity extends AppCompatActivity {
     public static final String ACTIVITY_NAME=MainActivity.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
     public static final String TAG=COMBINED_TAG;//ACTIVITY_NAME;
+
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +32,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, ACTIVITY_NAME+" onCreate: ");
         intializeView();
         onClickSetListner();
+        intialize_Fragmentmanager();
+        fragmentBackStackEntry_Count_TextView();
+        backStackChange_Listner();
     }
+
 
     @Override
     protected void onStart() {
@@ -80,12 +92,40 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void addFragment(){
-        FragmentManager fragmentManager=getSupportFragmentManager();
+   /* private void addFragment(){
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         Fragment_one fragment_one=new Fragment_one();
         fragmentTransaction.add(R.id.mainActivity_container,fragment_one,fragment_one.toString());
         fragmentTransaction.addToBackStack(fragment_one.toString());
         fragmentTransaction.commit();
+    }*/
+
+    private void addFragment(){
+        Fragment fragment;
+        switch (fragmentManager.getBackStackEntryCount()){
+            case 0: fragment = new Fragment_one(); break;
+            case 1: fragment = new Fragment_two();break;
+            case 2: fragment = new Fragment_Three(); break;
+            default: fragment = new SampleFragment(); break;
+        }
+        fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
+        fragmentTransaction.addToBackStack(null);
+        fragmentTransaction.commit();
+    }
+
+    private void intialize_Fragmentmanager(){
+        fragmentManager=getSupportFragmentManager();
+    }
+    private void fragmentBackStackEntry_Count_TextView(){
+        textView_backStactEntryCount.setText("Fragment count in back stack: "+fragmentManager.getBackStackEntryCount());
+    }
+    private void backStackChange_Listner(){
+        fragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                textView_backStactEntryCount.setText("Fragment count in back stack: "+fragmentManager.getBackStackEntryCount());
+            }
+        });
     }
 }
