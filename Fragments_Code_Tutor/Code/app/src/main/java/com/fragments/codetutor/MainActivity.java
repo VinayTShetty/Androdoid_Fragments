@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         intializeView();
         onClickSetListner();
         intialize_Fragmentmanager();
+        intializeFragmentTransaction();
         fragmentBackStackEntry_Count_TextView();
         backStackChange_Listner();
     }
@@ -87,8 +88,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                // textView_container_text.setVisibility(View.INVISIBLE);
-               // addFragment();
-                addDifferentFragment();
+                addFragment();
             }
         });
     }
@@ -100,14 +100,17 @@ public class MainActivity extends AppCompatActivity {
             case 2: fragment = new Fragment_Three(); break;
             default: fragment = new SampleFragment(); break;
         }
-        fragmentTransaction=fragmentManager.beginTransaction();
+
         fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
-      //  fragmentTransaction.addToBackStack(fragment.toString());
+        fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
     }
 
     private void intialize_Fragmentmanager(){
         fragmentManager=getSupportFragmentManager();
+    }
+    private void intializeFragmentTransaction(){
+        fragmentTransaction=fragmentManager.beginTransaction();
     }
     private void fragmentBackStackEntry_Count_TextView(){
         textView_backStactEntryCount.setText("Fragment count in back stack: "+fragmentManager.getBackStackEntryCount());
@@ -121,21 +124,5 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    int addingCount=0;
-    private void addDifferentFragment(){
-        addingCount++;
-        if(addingCount%2==0){
-            Fragment fragment=new Fragment_one();
-            fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
-            //  fragmentTransaction.addToBackStack(fragment.toString());
-            fragmentTransaction.commit();
-        }else {
-            Fragment fragment=new Fragment_two();
-            fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
-            //  fragmentTransaction.addToBackStack(fragment.toString());
-            fragmentTransaction.commit();
-        }
-    }
+
 }
