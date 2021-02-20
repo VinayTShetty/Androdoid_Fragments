@@ -87,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                // textView_container_text.setVisibility(View.INVISIBLE);
-                addFragment();
+               // addFragment();
+                addDifferentFragment();
             }
         });
     }
@@ -101,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
         }
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
+      //  fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
     }
 
@@ -117,5 +119,23 @@ public class MainActivity extends AppCompatActivity {
                 textView_backStactEntryCount.setText("Fragment count in back stack: "+fragmentManager.getBackStackEntryCount());
             }
         });
+    }
+
+    int addingCount=0;
+    private void addDifferentFragment(){
+        addingCount++;
+        if(addingCount%2==0){
+            Fragment fragment=new Fragment_one();
+            fragmentTransaction=fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
+            //  fragmentTransaction.addToBackStack(fragment.toString());
+            fragmentTransaction.commit();
+        }else {
+            Fragment fragment=new Fragment_two();
+            fragmentTransaction=fragmentManager.beginTransaction();
+            fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
+            //  fragmentTransaction.addToBackStack(fragment.toString());
+            fragmentTransaction.commit();
+        }
     }
 }
