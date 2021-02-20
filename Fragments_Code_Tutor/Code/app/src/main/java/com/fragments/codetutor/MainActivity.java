@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, ACTIVITY_NAME+" onCreate: ");
         intializeView();
         onClickSetListner();
-        intializeFragmentTransaction();
+     intilazieFragmentManager();
         fragmentBackStackEntry_Count_TextView();
         backStackChange_Listner();
     }
@@ -105,9 +105,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
-    private void intializeFragmentTransaction(){
-        fragmentTransaction=fragmentManager.beginTransaction();
+
+
+    private void intilazieFragmentManager(){
+        fragmentManager=getSupportFragmentManager();
     }
+
     private void fragmentBackStackEntry_Count_TextView(){
         textView_backStactEntryCount.setText("Fragment count in back stack: "+fragmentManager.getBackStackEntryCount());
     }
