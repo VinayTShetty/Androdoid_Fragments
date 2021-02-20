@@ -32,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, ACTIVITY_NAME+" onCreate: ");
         intializeView();
         onClickSetListner();
-        intialize_Fragmentmanager();
         intializeFragmentTransaction();
         fragmentBackStackEntry_Count_TextView();
         backStackChange_Listner();
@@ -100,15 +99,12 @@ public class MainActivity extends AppCompatActivity {
             case 2: fragment = new Fragment_Three(); break;
             default: fragment = new SampleFragment(); break;
         }
-
+        fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
         fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
     }
 
-    private void intialize_Fragmentmanager(){
-        fragmentManager=getSupportFragmentManager();
-    }
     private void intializeFragmentTransaction(){
         fragmentTransaction=fragmentManager.beginTransaction();
     }
@@ -124,5 +120,15 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Fragment fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
+        if(fragment!=null){
+            fragmentTransaction=fragmentManager.beginTransaction();
+            fragmentTransaction.remove(fragment);
+            fragmentTransaction.commit();
+        }else {
+            super.onBackPressed();
+        }
+    }
 }
