@@ -136,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         if(fragment!=null){
             fragmentTransaction=fragmentManager.beginTransaction();
             fragmentTransaction.remove(fragment);
+            fragmentTransaction.addToBackStack("Remove= "+fragment.toString());
             fragmentTransaction.commit();
         }else {
             super.onBackPressed();
