@@ -137,7 +137,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    int addingCount=0;
     private void addDifferentFragment(){
         Fragment fragment;
         fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
@@ -154,20 +153,7 @@ public class MainActivity extends AppCompatActivity {
         }
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.mainActivity_container,fragment,fragment.toString());
+        fragmentTransaction.addToBackStack(fragment.toString());
         fragmentTransaction.commit();
-        /*addingCount++;
-        if(addingCount%2==0){
-            Fragment fragment=new Fragment_one();
-            fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
-            //  fragmentTransaction.addToBackStack(fragment.toString());
-            fragmentTransaction.commit();
-        }else {
-            Fragment fragment=new Fragment_two();
-            fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
-            //  fragmentTransaction.addToBackStack(fragment.toString());
-            fragmentTransaction.commit();
-        }*/
     }
 }
