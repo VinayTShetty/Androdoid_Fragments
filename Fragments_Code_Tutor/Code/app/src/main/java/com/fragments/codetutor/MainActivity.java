@@ -153,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
             fragment=new SampleFragment();
         }
         fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
+        fragmentTransaction.replace(R.id.mainActivity_container,fragment,fragment.toString());
         fragmentTransaction.commit();
         /*addingCount++;
         if(addingCount%2==0){
