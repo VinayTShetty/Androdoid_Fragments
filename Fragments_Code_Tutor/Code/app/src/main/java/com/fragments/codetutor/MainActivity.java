@@ -120,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onBackStackChanged() {
                 textView_backStactEntryCount.setText("Fragment count in back stack: "+fragmentManager.getBackStackEntryCount());
+                StringBuilder stringBuilder=new StringBuilder("Current Status of the Fragment Transaction Back Stack "+fragmentManager.getBackStackEntryCount()+"\n");
             }
         });
     }
