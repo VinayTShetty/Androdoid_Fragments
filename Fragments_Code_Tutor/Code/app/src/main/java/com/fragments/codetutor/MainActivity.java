@@ -139,7 +139,23 @@ public class MainActivity extends AppCompatActivity {
 
     int addingCount=0;
     private void addDifferentFragment(){
-        addingCount++;
+        Fragment fragment;
+        fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
+        if(fragment instanceof  SampleFragment){
+            fragment=new Fragment_one();
+        }else if(fragment instanceof  Fragment_one){
+            fragment=new Fragment_two();
+        }else if(fragment instanceof  Fragment_two){
+            fragment=new Fragment_Three();
+        }else if(fragment instanceof Fragment_two){
+            fragment=new SampleFragment();
+        }else {
+            fragment=new SampleFragment();
+        }
+        fragmentTransaction=fragmentManager.beginTransaction();
+        fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
+        fragmentTransaction.commit();
+        /*addingCount++;
         if(addingCount%2==0){
             Fragment fragment=new Fragment_one();
             fragmentTransaction=fragmentManager.beginTransaction();
@@ -152,6 +168,6 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.toString());
             //  fragmentTransaction.addToBackStack(fragment.toString());
             fragmentTransaction.commit();
-        }
+        }*/
     }
 }
