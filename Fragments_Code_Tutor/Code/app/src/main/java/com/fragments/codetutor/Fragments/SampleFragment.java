@@ -66,6 +66,6 @@ public class SampleFragment extends BaseFragment {
 
     @Override
     public String toString() {
-        return SampleFragment.class.getName().toString();
+        return SampleFragment.class.getSimpleName().toString();
     }
 }

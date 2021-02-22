@@ -66,6 +66,6 @@ public class Fragment_Three extends BaseFragment {
 
     @Override
     public String toString() {
-        return Fragment_Three.class.getName().toString();
+        return Fragment_Three.class.getSimpleName().toString();
     }
 }

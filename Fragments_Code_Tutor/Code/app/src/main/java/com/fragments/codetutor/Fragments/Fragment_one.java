@@ -80,6 +80,6 @@ public class Fragment_one extends BaseFragment {
 
     @Override
     public String toString() {
-        return Fragment_one.class.getName();
+        return Fragment_one.class.getSimpleName();
     }
 }
