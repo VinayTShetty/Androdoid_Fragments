@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     TextView textView_container_text,textView_backStactEntryCount;
     public static final String ACTIVITY_NAME=MainActivity.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
-    public static final String TAG=COMBINED_TAG;//ACTIVITY_NAME;
+    public static final String TAG=ACTIVITY_NAME;//ACTIVITY_NAME;
 
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
@@ -120,7 +120,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onBackStackChanged() {
                 textView_backStactEntryCount.setText("Fragment count in back stack: "+fragmentManager.getBackStackEntryCount());
-                StringBuilder stringBuilder=new StringBuilder("Current Status of the Fragment Transaction Back Stack "+fragmentManager.getBackStackEntryCount()+"\n");
+                StringBuilder backStackEntry_Message=new StringBuilder("Current Status of the Fragment Transaction Back Stack "+fragmentManager.getBackStackEntryCount()+"\n");
+                for(int index=(fragmentManager.getBackStackEntryCount()-1); index>=0; index--){
+                    FragmentManager.BackStackEntry entry =  fragmentManager.getBackStackEntryAt(index);
+                    backStackEntry_Message.append(entry.getName()+"\n");
+                }
+                Log.i(TAG,backStackEntry_Message.toString());
             }
         });
     }

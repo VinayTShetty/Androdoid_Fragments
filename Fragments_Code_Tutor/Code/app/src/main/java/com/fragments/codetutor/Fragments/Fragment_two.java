@@ -80,7 +80,7 @@ public class Fragment_two extends BaseFragment {
     @Override
     public String toString() {
         Log.d(TAG, FRAGMENT_NAME+" ToString ");
-        return Fragment_one.class.getName();
+        return Fragment_two.class.getName();
     }
 }
 
