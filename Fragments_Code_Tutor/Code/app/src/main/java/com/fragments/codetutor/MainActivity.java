@@ -148,18 +148,18 @@ public class MainActivity extends AppCompatActivity {
         Fragment fragment;
         fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
         if(fragment instanceof  Fragment_one){
-            fragment=new SampleFragment();
+            fragment=new Fragment_two();
         }else if(fragment instanceof  Fragment_two){
             fragment=new Fragment_Three();
         }else if(fragment instanceof  Fragment_Three){
-            fragment=new Fragment_two();
+            fragment=new SampleFragment();
         }else if(fragment instanceof SampleFragment){
             fragment=new Fragment_one();
         }else {
             fragment=new SampleFragment();
         }
         fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.mainActivity_container,fragment,fragment.getClass().getSimpleName());
+        fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.getClass().getSimpleName());
         fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
         fragmentTransaction.commit();
     }
