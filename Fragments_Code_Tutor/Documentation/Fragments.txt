@@ -19,3 +19,5 @@ Fragments can be added in 2 ways.
 Activity BackStack is managed by the Activity manager.
 Fragment BackStack is managed by the Fragment manager.
 
+
+PopBack will remove the Fresh/Recently added stack in the FragmentTransaction.
