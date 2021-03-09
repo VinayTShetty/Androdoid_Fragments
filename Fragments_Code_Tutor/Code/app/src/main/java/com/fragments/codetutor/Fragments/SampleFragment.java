@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import com.fragments.codetutor.BaserFragment.BaseFragment;
 import com.fragments.codetutor.R;
 public class SampleFragment extends BaseFragment {
-    public static final String FRAGMENT_NAME=Fragment_two.class.getSimpleName();
+    public static final String FRAGMENT_NAME=SampleFragment.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
     public static final String TAG=COMBINED_TAG;
     @Override
