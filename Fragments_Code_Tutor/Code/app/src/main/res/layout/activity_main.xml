@@ -69,13 +69,13 @@
             android:layout_weight="0.33">
         </Button>
         <Button
-            android:id="@+id/mainActivtiy_remove"
+            android:id="@+id/mainActivtiy_popBackStack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textSize="15dp"
             android:layout_margin="10dp"
             android:textAllCaps="false"
-            android:text="Remove"
+            android:text="Pop Stak"
             android:layout_weight="0.33"
             android:backgroundTint="@color/black"
             >

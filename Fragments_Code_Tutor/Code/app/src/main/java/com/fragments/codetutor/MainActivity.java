@@ -15,8 +15,8 @@ import com.fragments.codetutor.Fragments.Fragment_one;
 import com.fragments.codetutor.Fragments.Fragment_two;
 import com.fragments.codetutor.Fragments.SampleFragment;
 
-public class MainActivity extends AppCompatActivity {
-    Button button_AddFragmet;
+public class MainActivity extends AppCompatActivity  {
+    Button button_AddFragmet,button_popStackFragment;
     TextView textView_container_text,textView_backStactEntryCount;
     public static final String ACTIVITY_NAME=MainActivity.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d(TAG, ACTIVITY_NAME+" onCreate: ");
         intializeView();
-        onClickSetListner();
+       onClickSetListner();
         intilazieFragmentManager();
         fragmentBackStackEntry_Count_TextView();
         backStackChange_Listner();
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
          * Buttons
          */
         button_AddFragmet=(Button)findViewById(R.id.mainActivtiy_AddButton);
+        button_popStackFragment=(Button)findViewById(R.id.mainActivtiy_popBackStack);
         /**
          * TextViews
          */
@@ -89,6 +90,13 @@ public class MainActivity extends AppCompatActivity {
                // textView_container_text.setVisibility(View.INVISIBLE);
 //                addFragment();
                 addDifferentFragment();
+            }
+        });
+
+        button_popStackFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fragmentManager.popBackStack();
             }
         });
     }
