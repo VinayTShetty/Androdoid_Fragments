@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity  {
     public static final String ACTIVITY_NAME=MainActivity.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
     public static final String TAG=ACTIVITY_NAME;//ACTIVITY_NAME;
-
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
 
@@ -96,7 +95,9 @@ public class MainActivity extends AppCompatActivity  {
         button_popStackFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fragmentManager.popBackStack();
+                Fragment fragment;
+                fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
+                    fragmentManager.popBackStack();
             }
         });
     }
@@ -143,11 +144,12 @@ public class MainActivity extends AppCompatActivity  {
         Fragment fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
         if(fragment!=null){
             fragmentTransaction=fragmentManager.beginTransaction();
-            fragmentTransaction.remove(fragment);
+           fragmentTransaction.replace(R.id.mainActivity_container,fragment);
+          //  fragmentTransaction.remove(fragment);
             fragmentTransaction.addToBackStack("Remove=  "+fragment.toString());
             fragmentTransaction.commit();
         }else {
-            super.onBackPressed();
+          //  super.onBackPressed();
         }
     }
 
@@ -168,7 +170,7 @@ public class MainActivity extends AppCompatActivity  {
         }
         fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.add(R.id.mainActivity_container,fragment,fragment.getClass().getSimpleName());
-        fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
+        fragmentTransaction.addToBackStack("Add "+fragment.getClass().getSimpleName());
         fragmentTransaction.commit();
     }
 }
