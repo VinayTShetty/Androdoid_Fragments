@@ -95,6 +95,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fragmentManager.findFragmentById(R.id.mainActivity_container);
+                /**
+                 * It will remove one Stack at a time.
+                 */
                 fragmentManager.popBackStack();
             }
         });
