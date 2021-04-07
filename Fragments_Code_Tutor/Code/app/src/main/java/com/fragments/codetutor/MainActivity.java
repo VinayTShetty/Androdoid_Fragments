@@ -16,7 +16,7 @@ import com.fragments.codetutor.Fragments.Fragment_two;
 import com.fragments.codetutor.Fragments.SampleFragment;
 
 public class MainActivity extends AppCompatActivity  {
-    Button button_AddFragmet,button_popStackFragment;
+    Button button_AddFragmet,button_popStackFragment,button_replace;
     TextView textView_container_text,textView_backStactEntryCount;
     public static final String ACTIVITY_NAME=MainActivity.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
@@ -75,6 +75,7 @@ public class MainActivity extends AppCompatActivity  {
          */
         button_AddFragmet=(Button)findViewById(R.id.mainActivtiy_AddButton);
         button_popStackFragment=(Button)findViewById(R.id.mainActivtiy_popBackStack);
+        button_replace=(Button)findViewById(R.id.mainActivtiy_replace);
         /**
          * TextViews
          */
@@ -86,8 +87,6 @@ public class MainActivity extends AppCompatActivity  {
         button_AddFragmet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // textView_container_text.setVisibility(View.INVISIBLE);
-//                addFragment();
                 addDifferentFragment();
             }
         });
@@ -95,9 +94,21 @@ public class MainActivity extends AppCompatActivity  {
         button_popStackFragment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fragment;
-                fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
+                    fragmentManager.findFragmentById(R.id.mainActivity_container);
                     fragmentManager.popBackStack();
+            }
+        });
+
+        button_replace.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
+                if(fragment!=null){
+                    fragmentTransaction=fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.mainActivity_container,fragment);
+                    fragmentTransaction.addToBackStack("Replace "+fragment.toString());
+                    fragmentTransaction.commit();
+                }
             }
         });
     }
@@ -141,16 +152,7 @@ public class MainActivity extends AppCompatActivity  {
 
     @Override
     public void onBackPressed() {
-        Fragment fragment=fragmentManager.findFragmentById(R.id.mainActivity_container);
-        if(fragment!=null){
-            fragmentTransaction=fragmentManager.beginTransaction();
-           fragmentTransaction.replace(R.id.mainActivity_container,fragment);
-          //  fragmentTransaction.remove(fragment);
-            fragmentTransaction.addToBackStack("Remove=  "+fragment.toString());
-            fragmentTransaction.commit();
-        }else {
-          //  super.onBackPressed();
-        }
+        super.onBackPressed();
     }
 
 
