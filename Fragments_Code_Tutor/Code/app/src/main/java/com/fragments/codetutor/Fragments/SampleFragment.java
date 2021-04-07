@@ -15,7 +15,7 @@ import com.fragments.codetutor.R;
 public class SampleFragment extends BaseFragment {
     public static final String FRAGMENT_NAME=SampleFragment.class.getSimpleName();
     public static final String COMBINED_TAG="COMBINED_LIFECYCLE";
-    public static final String TAG=COMBINED_TAG;
+    public static final String TAG="";//COMBINED_TAG;
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
